@@ -1,0 +1,1 @@
+{"Workflows":[{"FilePath":"Main.xaml","Activities":[]},{"FilePath":"Framework/TakeScreenshot.xaml","Activities":[]},{"FilePath":"Framework/SetTransactionStatus.xaml","Activities":[]},{"FilePath":"Default_Functions/SendEmailNotification.xaml","Activities":[]},{"FilePath":"Framework/GetTransactionData.xaml","Activities":null}]}
