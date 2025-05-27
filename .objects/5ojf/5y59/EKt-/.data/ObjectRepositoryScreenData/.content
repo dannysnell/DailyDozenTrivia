@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryScreenData ContentHash="ZULG_tF5y0G3d_X2X6c0aA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryScreenData.Data>
+    <TargetApp x:Key="TargetApp" Area="0, 0, 0, 0" Selector="&lt;html app='msedge.exe' url='https://dailydozentrivia.com/*' /&gt;" Url="dailydozentrivia.com" />
+  </ObjectRepositoryScreenData.Data>
+</ObjectRepositoryScreenData>

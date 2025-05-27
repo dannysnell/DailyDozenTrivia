@@ -105,10 +105,7 @@
       <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Initialize, populate and output a configuration Dictionary to be used throughout the project. &#xA;Settings and constants are read from the local configuration file, and assets are fetched from Orchestrator. &#xA;Asset values overwrite settings and constant values if they are defined with the same name." DisplayName="Initialize All Settings" sap:VirtualizedContainerService.HintSize="1592,1516" sap2010:WorkflowViewState.IdRef="Sequence_2">
-    <Sequence.Variables>
-      <Variable x:TypeArguments="s:String[]" Name="credList" />
-    </Sequence.Variables>
+  <Sequence sap2010:Annotation.AnnotationText="Initialize, populate and output a configuration Dictionary to be used throughout the project. &#xA;Settings and constants are read from the local configuration file, and assets are fetched from Orchestrator. &#xA;Asset values overwrite settings and constant values if they are defined with the same name." DisplayName="Initialize All Settings" sap:VirtualizedContainerService.HintSize="1592,645" sap2010:WorkflowViewState.IdRef="Sequence_2">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -333,45 +330,6 @@
         </Sequence>
       </TryCatch.Finally>
     </TryCatch>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,173" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="Trace" Message="[&quot;DDT_CredAssetNames: &quot; + out_Config(&quot;DDT_CredAssetNames&quot;).ToString]" />
-    <Assign sap:VirtualizedContainerService.HintSize="434,114" sap2010:WorkflowViewState.IdRef="Assign_24">
-      <Assign.To>
-        <OutArgument x:TypeArguments="s:String[]">[credList]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="s:String[]">[out_Config("DDT_CredAssetNames").ToString.Split(",")]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each cred" sap:VirtualizedContainerService.HintSize="434,584" sap2010:WorkflowViewState.IdRef="ForEach`1_4" Values="[credList]">
-      <ui:ForEach.Body>
-        <ActivityAction x:TypeArguments="x:String">
-          <ActivityAction.Argument>
-            <DelegateInArgument x:TypeArguments="x:String" Name="cred" />
-          </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="416,454" sap2010:WorkflowViewState.IdRef="Sequence_16">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,173" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="Trace" Message="[&quot;Credential name: &quot; + cred]" />
-            <ui:AddQueueItem ServiceBaseAddress="{x:Null}" TimeoutMS="{x:Null}" DisplayName="Add Queue Item" FolderPath="[out_Config(&quot;OrchestratorQueueFolder&quot;).ToString]" sap:VirtualizedContainerService.HintSize="382,57" sap2010:WorkflowViewState.IdRef="AddQueueItem_1" Priority="Normal" QueueType="[out_Config(&quot;OrchestratorQueueName&quot;).ToString]" Reference="[cred + &quot;_&quot; + Now.ToShortDateString]">
-              <ui:AddQueueItem.ItemInformation>
-                <InArgument x:TypeArguments="x:String" x:Key="CredName">[cred]</InArgument>
-                <InArgument x:TypeArguments="x:String" x:Key="Date">[Now.ToShortDateString]</InArgument>
-              </ui:AddQueueItem.ItemInformation>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:AddQueueItem>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="382,164" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="Trace" Message="[&quot;Added queue item for credName: &quot; + cred]" />
-          </Sequence>
-        </ActivityAction>
-      </ui:ForEach.Body>
-    </ui:ForEach>
     <ui:LogMessage DisplayName="Log Message (Initialize All Settings)" sap:VirtualizedContainerService.HintSize="434,164" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="Trace" Message="[&quot;Completed InitAllSettings workflow&quot;]" />
   </Sequence>
 </Activity>

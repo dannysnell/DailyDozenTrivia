@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Edge The Dozen Daily Trivia",
+  "Type": "Screen",
+  "Id": "4iaJ1cGR4UaLdSu7Cao0Tw",
+  "Reference": "u13g_jHJJUuMbACVs2T2hg/4iaJ1cGR4UaLdSu7Cao0Tw",
+  "ParentRef": "u13g_jHJJUuMbACVs2T2hg/uas5SiUiT0yQpM6FWI4FAg",
+  "Created": "2025-02-20T21:37:27.8044241Z",
+  "Updated": "2025-02-20T21:37:27.8044241Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.11.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
